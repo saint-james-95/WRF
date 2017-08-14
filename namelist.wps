@@ -39,7 +39,7 @@
  truelat1  =  30.0,
  truelat2  =  60.0,
  stand_lon = -98.0,
- geog_data_path = '/home/keirouz/WRF/data/geodata/'
+ geog_data_path = '../data/geodata/'
 /
 
 &ungrib
