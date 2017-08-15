@@ -10,7 +10,7 @@ program get_dimensions
    
   print *, 'in get_dimensions'
   CALL GETARG(1, datafile)
-  constantsfile = "/home/keirouz/WRF/WRFV3_Serial/wsm6_microservice/wsm6_constants"
+  constantsfile = "/root/WRF/WRFV3/wsm6_microservice/wsm6_constants"
   open (unitno, file=trim(datafile), form="unformatted", action='read')
 
   read(unitno)                                         &
