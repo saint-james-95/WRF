@@ -1775,7 +1775,7 @@ REAL, DIMENSION( ims:ime, kms:kme, jms:jme ),                        &
                   PRESENT( QR_CURR ) .AND. PRESENT ( QI_CURR ) .AND.  &
                   PRESENT( QS_CURR ) .AND. PRESENT ( QG_CURR ) .AND.  &
                   PRESENT( RAINNC  ) .AND. PRESENT ( RAINNCV )  ) THEN
-             microservice_directory = '/home/keirouz/WRF/WRFV3_Serial/wsm6_microservice/'
+             microservice_directory = '/root/WRF/WRFV3/wsm6_microservice/'
              microservice_executable = trim(microservice_directory)//'wsm6'
              datafile = trim(microservice_directory)//'wsm6_data'
              constantsfile = trim(microservice_directory)//'wsm6_constants'

@@ -3768,7 +3768,7 @@ CALL lsm_mosaic_init(IVGTYP,config_flags%ISWATER,config_flags%ISURBAN,config_fla
      CASE (WSM5SCHEME)
           CALL wsm5init(rhoair0,rhowater,rhosnow,cliq,cpv, allowed_to_read )
      CASE (WSM6SCHEME)
-          open (32, file="/home/keirouz/WRF/WRFV3_Serial/wsm6_microservice/wsm6_constants", &
+          open (32, file="/root/WRF/WRFV3/wsm6_microservice/wsm6_constants", &
                    form="unformatted", action='write')
           write(32) rhoair0,rhowater,rhosnow,cliq,cpv, config_flags%hail_opt,allowed_to_read
           close(32)
