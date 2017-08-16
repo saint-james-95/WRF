@@ -556,7 +556,7 @@ REAL, DIMENSION( ims:ime, kms:kme, jms:jme ),                        &
    integer :: ierr
 
    CHARACTER(256) microservice_directory
-   CHARACTER(256) microservice_executable
+   CHARACTER(1024) microservice_executable
    CHARACTER(256) datafile
    CHARACTER(256) constantsfile
 
@@ -1775,8 +1775,12 @@ REAL, DIMENSION( ims:ime, kms:kme, jms:jme ),                        &
                   PRESENT( QR_CURR ) .AND. PRESENT ( QI_CURR ) .AND.  &
                   PRESENT( QS_CURR ) .AND. PRESENT ( QG_CURR ) .AND.  &
                   PRESENT( RAINNC  ) .AND. PRESENT ( RAINNCV )  ) THEN
-             microservice_directory = '/root/WRF/WRFV3/wsm6_microservice/'
-             microservice_executable = trim(microservice_directory)//'wsm6'
+             microservice_directory = '/root/WRF/data/shared/wsm6_data/'
+             microservice_executable = 'sudo docker run --rm --name wsm6' &
+               // '-v ~/WRF/data/:/root/WRF/data'                         &
+               // '-v ~/WRF/WRF_NIST_Microservices_Public/namelist.input:'&
+               // '/root/WRF/WRFV3/test/em_real/namelist.input'           &
+               // '-v /var/run/docker.sock:/var/run/docker.sock wrf:wsm6'
              datafile = trim(microservice_directory)//'wsm6_data'
              constantsfile = trim(microservice_directory)//'wsm6_constants'
              open (31, file=datafile, &

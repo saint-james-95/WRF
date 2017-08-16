@@ -3768,12 +3768,11 @@ CALL lsm_mosaic_init(IVGTYP,config_flags%ISWATER,config_flags%ISURBAN,config_fla
      CASE (WSM5SCHEME)
           CALL wsm5init(rhoair0,rhowater,rhosnow,cliq,cpv, allowed_to_read )
      CASE (WSM6SCHEME)
-          open (32, file="/root/WRF/WRFV3/wsm6_microservice/wsm6_constants", &
+          open (32, file="/root/WRF/data/shared/wsm6_data/wsm6_constants", &
                    form="unformatted", action='write')
           write(32) rhoair0,rhowater,rhosnow,cliq,cpv, config_flags%hail_opt,allowed_to_read
           close(32)
           CALL wsm6init(rhoair0,rhowater,rhosnow,cliq,cpv, config_flags%hail_opt,allowed_to_read )
-          print *, "CALLED WSM6INIT HOPEFULLY THIS ONLY HAPPENS ONCE"
      CASE (ETAMPNEW)
          adv_moist_cond = .false.
          CALL etanewinit (MPDT,DT,DX,DY,LOWLYR,restart,           &
