@@ -1778,12 +1778,11 @@ REAL, DIMENSION( ims:ime, kms:kme, jms:jme ),                        &
              microservice_directory = '/root/WRF/data/shared/wsm6_data/'
              datafile = trim(microservice_directory)//'wsm6_data'
              constantsfile = trim(microservice_directory)//'wsm6_constants'
-             microservice_executable = 'sudo docker run --rm --name wsm6' &
-               // '-v ~/WRF/data/:/root/WRF/data'                         &
-               // '-v ~/WRF/WRF_NIST_Microservices_Public/namelist.input:'&
-               // '/root/WRF/WRFV3/test/em_real/namelist.input'           &
-               // '-v /var/run/docker.sock:/var/run/docker.sock wrf:wsm6 '&
-               // trim(datafile) // ' ' // trim(constantsfile)
+             microservice_executable = 'sudo docker run --rm --name wsm6'   &
+               // '-v ~/WRF/data/:/root/WRF/data'                           &
+               // '-v ~/WRF/WRF_NIST_Microservices_Public/namelist.input:'  &
+               // '/root/WRF/WRFV3/test/em_real/namelist.input' // '-c '    &
+               // './wsm6 ' // trim(datafile) // ' ' // trim(constantsfile) &
              open (31, file=datafile, &
                    form="unformatted", action='write')
              write(31)                                           &
