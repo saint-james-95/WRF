@@ -1781,7 +1781,7 @@ REAL, DIMENSION( ims:ime, kms:kme, jms:jme ),                        &
              microservice_executable = 'sudo docker run --rm --name wsm6 '   &
                // '-v ~/WRF/data/:/root/WRF/data '                           &
                // '-v ~/WRF/WRF_NIST_Microservices_Public/namelist.input:'   &
-               // '/root/WRF/WRFV3/test/em_real/namelist.input '             &
+               // '/root/WRF/WRFV3/test/em_real/namelist.input wrf:wsm6 '    &
                // trim(datafile) // ' ' // trim(constantsfile)
              open (31, file=datafile, &
                    form="unformatted", action='write')
