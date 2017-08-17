@@ -1782,7 +1782,7 @@ REAL, DIMENSION( ims:ime, kms:kme, jms:jme ),                        &
                // '-v ~/WRF/data/:/root/WRF/data '                           &
                // '-v ~/WRF/WRF_NIST_Microservices_Public/namelist.input:'   &
                // '/root/WRF/WRFV3/test/em_real/namelist.input ' // '-c '    &
-               // './wsm6 ' // trim(datafile) // ' ' // trim(constantsfile) &
+               // './wsm6 ' // trim(datafile) // ' ' // trim(constantsfile)
              open (31, file=datafile, &
                    form="unformatted", action='write')
              write(31)                                           &
