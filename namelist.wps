@@ -5,7 +5,7 @@
  end_date = '2005-01-02_00:00:00','2005-01-02_00:00:00'
  interval_seconds = 21600,
  io_form_geogrid = 2,
- opt_output_from_geogrid_path = './geogrid_output'
+ opt_output_from_geogrid_path = '/root/WRF/data/shared/geogrid_output'
 /
 
 &geogrid
@@ -39,16 +39,16 @@
  truelat1  =  30.0,
  truelat2  =  60.0,
  stand_lon = -98.0,
- geog_data_path = '../data/geodata/'
+ geog_data_path = '/root/WRF/data/geodata/'
 /
 
 &ungrib
  out_format = 'WPS',
- prefix = './ungrib_output/FILE',
+ prefix = '/root/WRF/data/shared/ungrib_output/FILE',
 /
 
 &metgrid
- fg_name = './ungrib_output/FILE'
+ fg_name = '/root/WRF/data/shared/ungrib_output/FILE'
  io_form_metgrid = 2,
- opt_output_from_metgrid_path = './metgrid_output'
+ opt_output_from_metgrid_path = '/root/WRF/data/shared/metgrid_output'
 /
